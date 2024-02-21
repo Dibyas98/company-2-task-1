@@ -1,0 +1,30 @@
+.header{
+    background-color: #F8F9FA;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+}
+.header-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15rem 0 5rem;
+    flex-wrap: wrap;
+    
+}
+.header-input{
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+/* MEADI QUERY FOR MOBILE */
+
+@media screen and (max-width:412px) {
+    .header-cont{
+        padding: 10px;
+        gap: 1rem;
+    }
+}
