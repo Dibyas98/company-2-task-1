@@ -1,22 +1,24 @@
-import React, { useContext } from 'react'
-import './property.css'
-import ProprertyCard from './ProprertyCard'
-import data from '../../data'
-import { nanoid } from 'nanoid';
+import React, { memo, useContext } from 'react';
+import './property.css';
+import ProprertyCard from './ProprertyCard'; // Corrected import name
+import data from '../../data';
 import { Data } from '../content/storeData';
 
-export default function Property() {
-    const {filterData} = useContext(Data)
-  return (
-    <div className='proprety'>
-      {filterData.length == 0?
-        data.map((ele) =>{
-            return <ProprertyCard key={nanoid()} data={ele}></ProprertyCard>
-        }):filterData.map((ele)=>{
-            return <ProprertyCard key={nanoid()} data={ele}></ProprertyCard>
-        })
+function Property() {
+    const { filterData } = useContext(Data);
 
-      }
-    </div>
-  )
+    return (
+        <div className='proprety'>
+            {filterData.length === 0 ?
+                data.map((ele) => (
+                    <ProprertyCard key={ele.id} data={ele} />
+                )) :
+                filterData.map((ele) => (
+                    <PropertyCard key={ele.id} data={ele} />
+                ))
+            }
+        </div>
+    );
 }
+
+export default memo(Property);

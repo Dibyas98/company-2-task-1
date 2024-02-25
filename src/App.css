@@ -1,0 +1,6 @@
+.liked{
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
